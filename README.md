@@ -1,24 +1,42 @@
-# ResNet-50 Performance Profiling on CPU
+# ResNet-50 CPU Performance Benchmark  
+**PyTorch vs TensorFlow Inference Profiling Toolkit**
 
-This project compares CPU inference performance of ResNet-50 in PyTorch and TensorFlow on a local laptop without a GPU.
+This project benchmarks **CPU inference performance of ResNet-50** across **PyTorch and TensorFlow** using both **synthetic tensors** and **real image data pipelines**.
 
-## Goals
+It is designed as a **performance engineering study** to analyze:
 
-- run pretrained ResNet-50 locally
-- measure inference latency
-- estimate throughput
-- observe warm-up effects
-- compare PyTorch and TensorFlow behavior
-- practice ML performance analysis in a small GitHub-ready project
+- framework efficiency
+- threading scalability
+- batch size impact
+- data pipeline overhead
+- latency vs throughput tradeoffs
+- reproducible timed benchmarking methodology
 
-## Project Structure
+The benchmark supports:
 
-```text
-resnet50-performance-profiling/
-├── README.md
-├── requirements.txt
-├── .gitignore
-├── scripts/
-├── results/
-├── profiling/
-└── data/
+- quick smoke tests
+- full configuration sweeps
+- fixed-duration performance runs (recommended)
+
+---
+
+# Project Goals
+
+This benchmark answers questions such as:
+
+- Which framework achieves higher CPU throughput?
+- How does batch size affect latency and throughput?
+- How well does inference scale with thread count?
+- How much overhead does real data loading introduce?
+- How stable are measurements over fixed time windows?
+
+The design mirrors workflows used in:
+
+- MLPerf-style benchmarking
+- CPU inference optimization
+- framework comparison studies
+- production inference profiling
+
+---
+
+# Repository Structure
